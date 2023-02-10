@@ -9,7 +9,7 @@ public class MoodAnalyzer {
 	
 	public MoodAnalyzer() {
 		
-		message = "I am in Sad Mood";
+		message = "I am in Happy Mood";
 	}
 	
 	MoodAnalyzer(String message){

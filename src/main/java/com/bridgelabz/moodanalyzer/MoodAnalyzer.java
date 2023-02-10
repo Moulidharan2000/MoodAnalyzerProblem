@@ -10,7 +10,7 @@ public class MoodAnalyzer {
 			else if(mood.contains("Happy"))
 				return "HAPPY!!!";
 		}catch(MoodAnalysisException e) {
-			return "Invalid Mood";
+			return mood;
 		}
 		return "SAD";
 	}
@@ -18,6 +18,6 @@ public class MoodAnalyzer {
 	public static void main(String[] args) throws MoodAnalysisException{
 		
 			MoodAnalyzer analyze = new MoodAnalyzer();
-			analyze.analyzeMood(null);
+			analyze.analyzeMood("");
 	}
 }

@@ -14,6 +14,6 @@ public class MoodAnalyzerTest {
 	public void analyzeMoodTest() throws MoodAnalysisException{
 		
 		MoodAnalyzer analyze = new MoodAnalyzer();
-		Assert.assertEquals("Invalid Mood", analyze.analyzeMood(null));
+		Assert.assertEquals("", analyze.analyzeMood(""));
 	}
 }

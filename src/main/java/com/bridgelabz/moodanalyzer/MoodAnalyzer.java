@@ -14,21 +14,14 @@ public class MoodAnalyzer {
 		this.message = message;
 	}
 	
-	public String analyzeMood() {
-		
-		if(message.contains("Sad"))
-			return "SAD";
-		
-		return "HAPPY";
-	}
-	
-	public static void main(String[] args) throws NullPointerException{
+	public String analyzeMood() throws NullPointerException{
 		
 		try {
-			MoodAnalyzer analyze = new MoodAnalyzer();
-			analyze.analyzeMood();
-		}catch(NullPointerException e) {
-			System.out.println("Invalid Message");
+			if(message.contains("Sad"))
+				return "SAD";
+		}catch(NullPointerException e){
+			return "HAPPY";
 		}
+		return null;
 	}
 }

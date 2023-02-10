@@ -1,27 +1,28 @@
 package com.bridgelabz.moodanalyzer;
 
+import java.util.Scanner;
+
 public class MoodAnalyzer {
 	
-	String message;
-	
-	public MoodAnalyzer() {
+	public void analyzeMood(String mood)throws MoodAnalysisException{
 		
-		message = null;
+		if(mood == null || mood.isEmpty())
+			throw new MoodAnalysisException("Mood Cannot be null or empty", MoodAnalysisError.EMPTY_MOOD);
+		else if(mood.contains("Happy"))
+			System.out.println("HAPPY!!!");
+		else
+			System.out.println("SAD");
 	}
 	
-	MoodAnalyzer(String message){
+	public static void main(String[] args) throws MoodAnalysisException{
 		
-		this.message = message;
-	}
-	
-	public String analyzeMood() throws NullPointerException{
-		
-		try {
-			if(message.contains("Sad"))
-				return "SAD";
-		}catch(NullPointerException e){
-			return "HAPPY";
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the Message : ");
+		try{
+			MoodAnalyzer analyze = new MoodAnalyzer();
+			analyze.analyzeMood(scan.next());
+		}catch(MoodAnalysisException e) {
+			System.out.println("Invalid Mood");
 		}
-		return null;
 	}
 }

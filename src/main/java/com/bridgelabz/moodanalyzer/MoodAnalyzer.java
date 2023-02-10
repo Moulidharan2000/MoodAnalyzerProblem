@@ -1,15 +1,12 @@
 package com.bridgelabz.moodanalyzer;
 
-import java.util.Scanner;
-
 public class MoodAnalyzer {
 	
 	String message;
-	Scanner scan = new Scanner(System.in);
 	
 	public MoodAnalyzer() {
 		
-		message = "I am in Happy Mood";
+		message = null;
 	}
 	
 	MoodAnalyzer(String message){
@@ -23,5 +20,15 @@ public class MoodAnalyzer {
 			return "SAD";
 		
 		return "HAPPY";
+	}
+	
+	public static void main(String[] args) throws NullPointerException{
+		
+		try {
+			MoodAnalyzer analyze = new MoodAnalyzer();
+			analyze.analyzeMood();
+		}catch(NullPointerException e) {
+			System.out.println("Invalid Message");
+		}
 	}
 }

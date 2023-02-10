@@ -7,9 +7,9 @@ public class MoodAnalyzer {
 	String message;
 	Scanner scan = new Scanner(System.in);
 	
-	MoodAnalyzer() {
+	public MoodAnalyzer() {
 		
-		message = scan.nextLine();
+		message = "I am in Sad Mood";
 	}
 	
 	MoodAnalyzer(String message){
@@ -17,18 +17,11 @@ public class MoodAnalyzer {
 		this.message = message;
 	}
 	
-	public void analyzeMood() {
+	public String analyzeMood() {
 		
-		if(message.contains("sad"))
-			System.out.println("SAD");
-		else
-			System.out.println("Happy");
-	}
-	
-	public static void main(String[] args) {
+		if(message.contains("Sad"))
+			return "SAD";
 		
-		System.out.print("Enter the Message : ");
-		MoodAnalyzer analyze = new MoodAnalyzer();
-		analyze.analyzeMood();
+		return "HAPPY";
 	}
 }

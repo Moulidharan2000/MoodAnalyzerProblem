@@ -8,7 +8,6 @@ public class MoodAnalyzer {
 		
 		message = null;
 	}
-	
 	MoodAnalyzer(String message){
 		
 		this.message = message;

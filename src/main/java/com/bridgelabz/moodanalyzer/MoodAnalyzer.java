@@ -1,11 +1,34 @@
 package com.bridgelabz.moodanalyzer;
 
+import java.util.Scanner;
+
 public class MoodAnalyzer {
 	
-	public String analyzeMood(String mood) {
+	String message;
+	Scanner scan = new Scanner(System.in);
+	
+	MoodAnalyzer() {
 		
-		if(mood.contains("sad") || mood.contains("not good"))
-			return "Sad";
-		return "Happy";
+		message = scan.nextLine();
+	}
+	
+	MoodAnalyzer(String message){
+		
+		this.message = message;
+	}
+	
+	public void analyzeMood() {
+		
+		if(message.contains("sad"))
+			System.out.println("SAD");
+		else
+			System.out.println("Happy");
+	}
+	
+	public static void main(String[] args) {
+		
+		System.out.print("Enter the Message : ");
+		MoodAnalyzer analyze = new MoodAnalyzer();
+		analyze.analyzeMood();
 	}
 }
